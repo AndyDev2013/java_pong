@@ -1,3 +1,5 @@
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/dvr5i9IhRNs/0.jpg)](http://www.youtube.com/watch?v=dvr5i9IhRNs Pong)
+
 # java_pong
 During second year I wanted to learn more about Java's basic graphics and GUI libraries .
 
