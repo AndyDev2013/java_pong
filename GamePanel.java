@@ -10,8 +10,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener
 {
 	private static final long serialVersionUID = 1L;
 	
-	Player player = new Player();
-	Player2 player2 = new Player2();
+	PlayerOne playerOne = new PlayerOne();
+	PlayerTwo playerTwo = new PlayerTwo();
 	Ball ball = new Ball();
 
 	public int player1Score = 0;
@@ -28,10 +28,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener
 	private void update()
 	{
 		ball.update();
-		ball.checkCollisionWith(player,player2);
+		ball.checkCollisionWith(playerOne,playerTwo);
 		newBall();
-		player.update();
-		player2.update();
+		playerOne.update();
+		playerTwo.update();
 	}
 
 	public void paintComponent(Graphics g)
@@ -44,8 +44,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener
 		g.drawString("P1: " + player1Score, 50, 30);
 		g.drawString("P2: " + player2Score, 370, 30);
 
-		player2.paint(g);
-		player.paint(g);
+		playerOne.paint(g);
+		playerTwo.paint(g);
 		ball.paint(g);
 	}
 
@@ -59,20 +59,20 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener
 	{
 		if(e.getKeyCode() == KeyEvent.VK_A)
 		{
-			player.setYVelocity(-7);
+			playerOne.setYVelocity(-7);
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_Z)
 		{
-			player.setYVelocity(+7);
+			playerOne.setYVelocity(+7);
 		}
 
 		if(e.getKeyCode() == KeyEvent.VK_P)
 		{
-			player2.setYVelocity(-7);
+			playerTwo.setYVelocity(-7);
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_L)
 		{
-			player2.setYVelocity(+7);
+			playerTwo.setYVelocity(+7);
 		}
 	}
 
@@ -82,17 +82,24 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener
 
 		if(keyCode == KeyEvent.VK_A || keyCode == KeyEvent.VK_Z )
 		{
-			player.setYVelocity(0);
+			playerOne.setYVelocity(0);
 		}
 
 		if(keyCode == KeyEvent.VK_P || keyCode == KeyEvent.VK_L )
 		{
-			player2.setYVelocity(0);
+			playerTwo.setYVelocity(0);
+		}
+		
+		if(keyCode == KeyEvent.VK_SPACE){
+			player1Score = 0;
+			player2Score = 0;
+			playerOne = new PlayerOne();
+			playerTwo = new PlayerTwo();
+			ball = new Ball();
 		}
 	}
 
-	public void keyTyped(KeyEvent e)
-	{}
+	public void keyTyped(KeyEvent e){}
 
 	public void newBall()
 	{

@@ -59,7 +59,7 @@ public class Ball
 		xVelocity  = -xVelocity;
 	}
 
-	public void checkCollisionWith(Player player,Player2 player2)
+	public void checkCollisionWith(PlayerOne player,PlayerTwo player2)
 	{
 		if(this.x > player.getX() && this.x < player.getX() + player.getWidth()) // top left of ball is greater than top left of player
 		{

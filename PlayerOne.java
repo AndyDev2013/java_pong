@@ -1,15 +1,14 @@
 import java.awt.Graphics;
 import java.awt.Color;
 
-public class Player
+public class PlayerOne
 {
 	private int y = 400;
 	private int yVelocity = 0;
 	private int width = 8;
 	private int height = 70;
 
-	public Player()
-	{}
+	public PlayerOne(){}
 
 	public void update()
 	{

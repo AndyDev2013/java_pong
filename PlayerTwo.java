@@ -1,14 +1,13 @@
 import java.awt.*;
 
-public class Player2
+public class PlayerTwo
 {
 	private int y = 200;
 	private int yVelocity = 0;
 	private int width = 8;
 	private int height = 70;
 
-	public Player2()
-	{}
+	public PlayerTwo(){}
 
 	public void update()
 	{
