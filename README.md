@@ -1,5 +1,3 @@
-<img src="https://puu.sh/zx6ST/27c63e1491.png" width="300px" height="300px">
-
 # pong
 
 During my second year of college I wanted to learn more about Java's basic graphics and GUI libraries. This was the result.
